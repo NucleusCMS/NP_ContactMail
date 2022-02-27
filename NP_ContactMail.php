@@ -492,4 +492,3 @@ class NPCM_EXT_ITEM_ACTIONS extends BaseActions {
 ****************************************************************/
 	function setParser(&$parser) {$this->parser =& $parser; }
 }
-?>

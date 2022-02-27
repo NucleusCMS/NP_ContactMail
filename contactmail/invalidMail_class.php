@@ -136,4 +136,3 @@ class INVALIDMAIL_ACTIONS extends BaseActions {
 		echo NP_ContactMail::MakeLink($type,$extraparams);
 	}
 }
-?>

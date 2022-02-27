@@ -93,4 +93,3 @@ class SENDMAIL_ACTIONS extends BaseActions {
 	function setCurrentRow(&$currentrow) { $this->CurrentRow =& $currentrow; }
 	
 }
-?>

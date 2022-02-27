@@ -698,5 +698,3 @@ function get_css()
 	}
 	return $ret;
 }
-
-?>

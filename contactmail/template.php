@@ -90,5 +90,3 @@ class NPCM_TEMPLATE {
 	}
 	
 }
-
-?>

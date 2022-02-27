@@ -111,7 +111,3 @@ define('__NPCM_FORM_TEMPLATE_SETTINGS','Template Settings');
 define('__NPCM_FORM_NEWTEMPLATE','New Template');
 define('__NPCM_FORM_TEMPLATE_COMMENTS','Comments');
 define('__NPCM_FORM_CREATENEWTEMPLATE','Create new template');
-
-
-?>
-

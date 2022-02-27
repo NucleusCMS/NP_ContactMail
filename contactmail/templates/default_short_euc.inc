@@ -53,5 +53,3 @@ $template->setTemplate($name, $content);
 $name = 'SENDMAIL_FOOTER';
 $content = '<!-- Submit buttom --><br /><div class="npcm_foot"><input type="submit" value="<%btn_returntop%>" class="formbutton" /></div></form></div>';
 $template->setTemplate($name, $content);
-
-?>

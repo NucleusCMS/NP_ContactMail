@@ -126,4 +126,3 @@ $NPCM_CONF = getNPCMConfig();
 		}
 		
 	}
-?>

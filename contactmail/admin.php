@@ -829,5 +829,3 @@ printf(" name=%s  desc=%s ",$name,$desc);
 		}
 	}
 }
-
-?>

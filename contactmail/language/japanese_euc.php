@@ -110,6 +110,3 @@ define('__NPCM_FORM_TEMPLATE_SETTINGS','テンプレートの設定');
 define('__NPCM_FORM_NEWTEMPLATE','新規テンプレート');
 define('__NPCM_FORM_TEMPLATE_COMMENTS','コメント');
 define('__NPCM_FORM_CREATENEWTEMPLATE','新規テンプレートの作成');
-
-?>
-
