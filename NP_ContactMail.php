@@ -420,9 +420,9 @@ class NP_ContactMail extends NucleusPlugin {
 		if (extension_loaded('mbstring')) { 
 			mb_language("Japanese");
 			mb_internal_encoding($char);
-			$success = @mb_send_mail($toaddr, $title2, $body, "From: ". $fromaddr );
+			$success = mb_send_mail($toaddr, $title2, $body, "From: ". $fromaddr );
 			if($from_copy=="on")
-				$success1 = @mb_send_mail($fromaddr, $title2, $body, "From: ". $fromaddr );
+				$success1 = mb_send_mail($fromaddr, $title2, $body, "From: ". $fromaddr );
 			}
 		else{ 
 			$title2 = "=?iso-2022-jp?B?" . base64_encode(JcodeConvert($title, 0, 3)) . "?="; 
