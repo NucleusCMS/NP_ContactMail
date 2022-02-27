@@ -427,13 +427,13 @@ printf(" name=%s  desc=%s ",$name,$desc);
 			
     			$result = sel_contactmail_templ_item($id);
 
-			make_array_ipos(&$ipos_array,$id);
-			make_array_ichk(&$ichk_array,$id);	
+			make_array_ipos($ipos_array,$id);
+			make_array_ichk($ichk_array,$id);	
 			
 			while ($row = mysql_fetch_object($result)) {
-				make_associative_array($row->iname, $row->idesc, &$idesc_array);
-				make_associative_array($row->iname, $row->off_mes, &$off_mes_array);
-				make_associative_array($row->iname, $row->on_mes, &$on_mes_array);
+				make_associative_array($row->iname, $row->idesc, $idesc_array);
+				make_associative_array($row->iname, $row->off_mes, $off_mes_array);
+				make_associative_array($row->iname, $row->on_mes, $on_mes_array);
 			}
 
 			del_contactmail_templ_item($id);
@@ -460,13 +460,13 @@ printf(" name=%s  desc=%s ",$name,$desc);
 		global ${'off_mes_array'};
 		global ${'on_mes_array'};
 		
-		striptags(&$ichk_array, 'ichk');
-		striptags(&$ipos_array, 'ipos');
-		striptags(&$idesc, 'idesc');
-		striptags(&$iname_array, 'iname');
-		striptags(&$iname_cb_array, 'iname_cb');
-		striptags(&$off_mes, 'off_mes');
-		striptags(&$on_mes, 'on_mes');
+		striptags($ichk_array, 'ichk');
+		striptags($ipos_array, 'ipos');
+		striptags($idesc, 'idesc');
+		striptags($iname_array, 'iname');
+		striptags($iname_cb_array, 'iname_cb');
+		striptags($off_mes, 'off_mes');
+		striptags($on_mes, 'on_mes');
 		
 //2006-10-30 modified start
 
@@ -481,30 +481,30 @@ printf(" name=%s  desc=%s ",$name,$desc);
 		if($member->isAdmin() && $id) {
 		
 			if (isset($_POST['fromname_item'])) {
-				striptags(&$wk_item, 'fromname_item');
+				striptags($wk_item, 'fromname_item');
 				setNPCMoption_templ('fromname_item', $wk_item,$id);
 			}
 			if (isset($_POST['fromaddr_item'])) {
-				striptags(&$wk_item, 'fromaddr_item');
+				striptags($wk_item, 'fromaddr_item');
 				setNPCMoption_templ('fromaddr_item', $wk_item,$id);
 			}
 			if (isset($_POST['fromsubject_item'])) {
-				striptags(&$wk_item, 'fromsubject_item');
+				striptags($wk_item, 'fromsubject_item');
 				setNPCMoption_templ('fromsubject_item', $wk_item,$id);
 			}
 			if (isset($_POST['fromcopy_item'])) {
-				striptags(&$wk_item, 'fromcopy_item');
+				striptags($wk_item, 'fromcopy_item');
 				setNPCMoption_templ('fromcopy_item', $wk_item,$id);
 			}
 //2006-10-30 modified end
 
 			for ($i=0; $i<count($idesc); $i++){			
-				make_associative_array($iname_array[$i], hschars_encode($idesc[$i]), &$idesc_array);
+				make_associative_array($iname_array[$i], hschars_encode($idesc[$i]), $idesc_array);
 			}
 			
 			for ($i=0; $i<count($iname_cb_array); $i++){			
-				make_associative_array($iname_cb_array[$i], hschars_encode($off_mes[$i]), &$off_mes_array);
-				make_associative_array($iname_cb_array[$i], hschars_encode($on_mes[$i]), &$on_mes_array);
+				make_associative_array($iname_cb_array[$i], hschars_encode($off_mes[$i]), $off_mes_array);
+				make_associative_array($iname_cb_array[$i], hschars_encode($on_mes[$i]), $on_mes_array);
 			}
 			
 			upd_contactmail_templ_item($idesc_array , $on_mes_array, $off_mes_array, $id);
@@ -604,13 +604,13 @@ printf(" name=%s  desc=%s ",$name,$desc);
 		ins_contactmail_templ_item($str1,$str2, $id);
     		$result = sel_contactmail_templ_item($id);
 
-		make_array_ipos(&$ipos_array,$id);
-		make_array_ichk(&$ichk_array,$id);	
+		make_array_ipos($ipos_array,$id);
+		make_array_ichk($ichk_array,$id);	
 			
 		while ($row = mysql_fetch_object($result)) {
-			make_associative_array($row->iname, $row->idesc, &$idesc_array);
-			make_associative_array($row->iname, $row->off_mes, &$off_mes_array);
-			make_associative_array($row->iname, $row->on_mes, &$on_mes_array);
+			make_associative_array($row->iname, $row->idesc, $idesc_array);
+			make_associative_array($row->iname, $row->off_mes, $off_mes_array);
+			make_associative_array($row->iname, $row->on_mes, $on_mes_array);
 		}
 		upd_contactmail_templ_item($idesc_array , $on_mes_array, $off_mes_array, $id);
 			
@@ -704,8 +704,8 @@ printf(" name=%s  desc=%s ",$name,$desc);
 			$on_mes = array();
 			$off_mes = array();
 		
-			make_array_substitute(&$substitute,$id);
-			make_array_ichk(&$ichk,$id);
+			make_array_substitute($substitute,$id);
+			make_array_ichk($ichk,$id);
 		
 			$i=0;
 			while ($row = mysql_fetch_object($result3)) {

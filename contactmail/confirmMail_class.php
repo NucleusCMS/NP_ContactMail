@@ -33,7 +33,7 @@ class confirmMail {
 		if(!$NPCM_CONF['template']) $NPCM_CONF['template'] = 1;
 		
 		$this->template = & new NPCM_TEMPLATE($NPCM_CONF['template']);
-		make_associative_array_sub1(&$sub_array, $data_array);
+		make_associative_array_sub1($sub_array, $data_array);
           		
 		$template_header = "<style type='text/css'>@import '".$CONF['IndexURL']."nucleus/plugins/contactmail/".get_css()."';</style>";
 		$template_header .= $this->template->section['CONFIRMMAIL_HEADER'];

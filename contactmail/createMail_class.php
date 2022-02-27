@@ -34,13 +34,13 @@ class createMail {
 		$errstr = nl2br(postVar('errstr'));
 
 		if(!strlen($errstr)){
-			striptags(&$from_data, 'from_data');
+			striptags($from_data, 'from_data');
 
 			$first_flg = false;
 			if(count($from_data) == 0) $first_flg = true;
-				make_associative_array_sub(&$sub_array, $data_array, $from_data);
+				make_associative_array_sub($sub_array, $data_array, $from_data);
 		} else {
-			make_associative_array_sub1(&$sub_array, $data_array);
+			make_associative_array_sub1($sub_array, $data_array);
 		}
 		
 		$template_header = "<style type='text/css'>@import '".$CONF['IndexURL']."nucleus/plugins/contactmail/".get_css()."';</style>";
@@ -62,8 +62,8 @@ class createMail {
 				$uname_key = conv_option_to_value($ipos_array, $NPCM_CONF['fromname_item']);
 				$uaddr_key = conv_option_to_value($ipos_array, $NPCM_CONF['fromaddr_item']);
 
-				set_associative_array_value(&$sub_array, $uname, $uname_key);
-				set_associative_array_value(&$sub_array, $uaddr, $uaddr_key);
+				set_associative_array_value($sub_array, $uname, $uname_key);
+				set_associative_array_value($sub_array, $uaddr, $uaddr_key);
 			}
     		}
 		else {

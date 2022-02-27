@@ -185,7 +185,7 @@ function set_templ_item_createbody($str,$itype,$pin1,$pin2,$id) {
 
 	while($flg==false)
 	{
-		$str_input = search_input_form(&$str ,&$pos, $pin1, $pin2);
+		$str_input = search_input_form($str ,$pos, $pin1, $pin2);
 		$sv_pos=$sv_pos+$pos+strlen($str_input);
 		if($str_input==NULL) $flg=true;
 		if($itype=="type") $str_type = set_TempItem($str_input, "/", "type");
@@ -213,7 +213,7 @@ function set_templ_item_confirmbody($str,$itype,$pin1,$pin2,$id) {
 
 	while($flg==false)
 	{
-		$str_input = search_input_form(&$str ,&$pos, $pin1, $pin2);
+		$str_input = search_input_form($str ,$pos, $pin1, $pin2);
 		$sv_pos=$sv_pos+$pos+strlen($str_input);
 		if($str_input==NULL) $flg=true;
 		$str_type = $itype;		

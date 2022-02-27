@@ -86,16 +86,16 @@ $NPCM_CONF = getNPCMConfig();
 			
 			while ($row = mysql_fetch_object($result6)) {
 				$ws='%'.$row->iname.'%';
-				make_associative_array($row->iname, $ws, &$cb_mes_array);
-				make_associative_array($row->iname, $row->off_mes, &$off_mes_array);
-				make_associative_array($row->iname, $row->on_mes, &$on_mes_array);
+				make_associative_array($row->iname, $ws, $cb_mes_array);
+				make_associative_array($row->iname, $row->off_mes, $off_mes_array);
+				make_associative_array($row->iname, $row->on_mes, $on_mes_array);
 				$i++;
 		}
 		
 		$i=0;
 		while ($row = mysql_fetch_object($result3)) {
 		$ws='<'.$substitute[$i].'>';
-			make_associative_array($row->iname, $row->ipos, &$ipos_array);
+			make_associative_array($row->iname, $row->ipos, $ipos_array);
 			$data_array[$i] = array('name'=>$row->iname,'desc'=>$row->idesc,'val'=>$ws);
 			$i++;
 		}

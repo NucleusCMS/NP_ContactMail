@@ -335,7 +335,7 @@ class NP_ContactMail extends NucleusPlugin {
 		global ${'multibyte_chk'};
 		global ${'mailaddr_chk'};
 
-		make_associative_array_sub1(&$sub_array, $data_array);
+		make_associative_array_sub1($sub_array, $data_array);
 		
 		$errstr ="";
 		ob_start();
@@ -400,14 +400,14 @@ class NP_ContactMail extends NucleusPlugin {
 		$success = $success1 = true;
 		$NPCM_CONF = getNPCMConfig();		
 
-		striptags(&$from_data, 'from_data');
-		make_associative_array_sub(&$sub_array, $data_array, $from_data);
+		striptags($from_data, 'from_data');
+		make_associative_array_sub($sub_array, $data_array, $from_data);
 				
 		$toaddr = set_addr($NPCM_CONF['toaddr']);
 		$fromaddr = set_sendmail_option($ipos_array, $sub_array, $NPCM_CONF['fromaddr_item']);
 		$from_subject = set_sendmail_option($ipos_array, $sub_array, $NPCM_CONF['fromsubject_item']);
 		$from_copy = set_sendmail_option($ipos_array, $sub_array, $NPCM_CONF['fromcopy_item']);
-		set_cb_mes(&$sub_array, $cb_mes_array, $on_mes_array, $off_mes_array);
+		set_cb_mes($sub_array, $cb_mes_array, $on_mes_array, $off_mes_array);
 
 		$body="";
 		foreach($sub_array as $key => $val){
